@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development",
+    "authors": ["Craig Larman"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51gVLEtrCNL._SX398_BO1,204,203,200_.jpg"
+  },
+  {
+    "title": "Third-Party JavaScript",
+    "authors": ["Ben Vinegar", "Anton Kovalyov"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51tT9E1xhzL._SX397_BO1,204,203,200_.jpg"
+  },
+  {
+    "title": "JavaScript Patterns: Build Better Applications with Coding and Design Patterns",
+    "authors": ["Stoyan Stefanov"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51%2BSiphz7AL._SX377_BO1,204,203,200_.jpg"
+  },
+  {
+    "title": "Amazon Web Services in Action",
+    "authors": ["Andreas Wittig", "Michael Wittig"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51imZSASpPL._SX397_BO1,204,203,200_.jpg"
+  },
+  {
+    "title": "Web Scraping with Python: Collecting Data from the Modern Web",
+    "authors": ["Ryan Mitchell"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51Y8X5c17qL._SX379_BO1,204,203,200_.jpg"
+  },
+  {
+    "title": "The Second Machine Age: Work, Progress, and Prosperity in a Time of Brilliant Technologies",
+    "authors": ["Erik Brynjolfsson", "Andrew McAfee"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/512xjHhcZLL._SX327_BO1,204,203,200_.jpg"
+  },
+  {
+    "title": "Thing Explainer: Complicated Stuff in Simple Words",
+    "authors": ["Randall Munroe"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51Uv99xOnIL._SX344_BO1,204,203,200_.jpg"
+  },
+  {
+    "title": "Docker in Action",
+    "authors": ["Jeff Nickoloff"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/518L63vGMpL._SX396_BO1,204,203,200_.jpg"
+  },
+  {
+    "title": "Introduction to Machine Learning with Python: A Guide for Data Scientists",
+    "authors": ["Andreas Mueller", "Sarah Guido"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51gVLEtrCNL._SX398_BO1,204,203,200_.jpg"
+  },
+  {
+    "title": "The Self-Taught Programmer: The Definitive Guide to Programming Professionally",
+    "authors": ["Cory Althoff"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41MCEJ-VJOL.jpg"
+  },
+  {
+    "title": "HTML and CSS: Design and Build Websites",
+    "authors": ["Jon Duckett"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41WznOEKmAL._SX396_BO1,204,203,200_.jpg"
+  },
+  {
+    "title": "Code Complete: A Practical Handbook of Software Construction",
+    "authors": ["Steve McConnell"],
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/515iO%2B-PRUL._SX408_BO1,204,203,200_.jpg"
+  }
+]

@@ -1,0 +1,26 @@
+.books {
+  margin: 40px 0;
+}
+
+input {
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  input {
+    width: 100%;
+  }
+}
+
+input, .btn {
+  display: inline-block
+}
+
+.btn-primary {
+  margin: 2px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+}
