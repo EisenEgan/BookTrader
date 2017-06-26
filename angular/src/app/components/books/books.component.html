@@ -5,6 +5,24 @@
     <hr />
     <p>Click the <span class="glyphicon glyphicon-retweet"></span> to request a trade!</p>
   </div>
+  <div *ngFor="let book of books" class="book">
+    <!-- <div style="position:relative" class="image-container">
+      <div>
+        <img [src]="book.imageUrl">
+      </div>
+      <div style="position:absolute; width: 120px; left:200; top:0;">
+        <span class="glyphicon glyphicon-retweet"></span>
+      </div>
+    </div> -->
+    <div style="position: relative;" class="image-container">
+      <img [src]="book.imageUrl"  class="book-image" style="position: relative; z-index: 1;" />
+      <span (click)="requestBook()" *ngIf="book.user!==id && !book.userRequestingTrade"class="glyphicon glyphicon-retweet" style="position: absolute;cursor:pointer;left:100px; top: 10px;z-index: 10;"></span>
+     </div>
+    <!-- <div class="image-container">
+      <img [src]="book.imageUrl" class="bookimage" />
+      <span class="glyphicon glyphicon-retweet"></span>
+    </div> -->
+  </div>
 </div>
 <hr />
 <footer>

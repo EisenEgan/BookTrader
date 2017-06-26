@@ -1,3 +1,33 @@
 .requests {
   margin: 20px 0;
 }
+
+.book {
+  padding: 10px;
+  max-width: 450px;
+  border-bottom: 1px solid #DDDDDD;
+  border-radius: 4px;
+}
+
+.book:hover {
+  background-color: #EEEEEE;
+}
+
+.title {
+  color: #6AAFEE;
+  display: inline-block
+}
+
+.glyphicon {
+  padding: 2px;
+  display: inline-block;
+  float: right;
+}
+
+.glyphicon-remove {
+  color: red;
+}
+
+.glyphicon-ok {
+  color: green;
+}

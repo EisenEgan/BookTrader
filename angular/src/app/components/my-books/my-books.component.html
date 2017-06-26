@@ -3,10 +3,19 @@
   <div class="books">
     <h1>My Books:</h1>
     <hr />
-    <form>
-      <input type="text" class="form-control" placeholder="Add Book">
+    <form novalidate (ngSubmit)="searchBooks(book)">
+      <input type="text" class="form-control"  [(ngModel)]="book" name="book" placeholder="Add Book">
       <button type="submit" class="btn btn-primary">Add</button>
     </form>
+  </div>
+  <div *ngFor="let book of user?.books" class="book">
+    <!-- <div class="image-container">
+      <img [src]="book.imageUrl" />
+    </div> -->
+    <div style="position: relative;" class="image-container">
+      <img [src]="book.imageUrl"  class="book-image" style="position: relative; z-index: 1;" />
+      <span (click)="removeBook(book._id)" class="glyphicon glyphicon-remove" style="color:#DC143C;position: absolute;cursor:pointer;left:112px; top: 6px;z-index: 10;"></span>
+    </div>
   </div>
 </div>
 <hr />

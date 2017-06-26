@@ -6,3 +6,24 @@ footer {
   text-align: center;
   padding: 30px;
 }
+
+img {
+  width: 120px;
+}
+
+/*.bookimage {
+  position: absolute;
+}*/
+
+
+
+.book {
+  display: inline-block;
+}
+
+.image-container {
+  margin: 4px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #EEEEEE;
+}

@@ -20,6 +20,21 @@ input, .btn {
   margin: 2px 0;
 }
 
+img {
+  width: 120px;
+}
+
+.book {
+  display: inline-block;
+}
+
+.image-container {
+  margin: 4px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #EEEEEE;
+}
+
 footer {
   text-align: center;
   padding: 30px;

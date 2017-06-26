@@ -1,4 +1,25 @@
 <div class="requests">
-  <button type="button" class="btn btn-success">Your trade requests ({{outstanding}} outstanding)</button>
-  <button type="button" class="btn btn-primary">Trade requests for you ({{unapproved }} unapproved)</button>
+  <button type="button" class="btn btn-success" (click)="outstanding()">Your trade requests ({{ outstandingBooks }} outstanding)</button>
+  <button type="button" class="btn btn-primary" (click)="unapproved()">Trade requests for you ({{ unapprovedBooks }} unapproved)</button>
+  <div *ngIf="showOutstanding">
+    <h1>Your outstanding requests:</h1>
+    <hr />
+    <div *ngFor="let book of booksOutstanding" class="book">
+      <div class="title">
+        {{ book.title }}
+      </div>
+      <span class="glyphicon glyphicon-remove" (click)="cancelRequest()"></span>
+    </div>
+  </div>
+  <div *ngIf="showUnapproved">
+    <h1>Your outstanding requests:</h1>
+    <hr />
+    <div *ngFor="let book of booksUnapproved" class="book">
+      <div class="title">
+        {{ book.title }}
+      </div>
+      <span class="glyphicon glyphicon-ok" (click)="approveTrade()"></span>
+      <span class="glyphicon glyphicon-remove" (click)="rejectTrade()"></span>
+    </div>
+  </div>
 </div>

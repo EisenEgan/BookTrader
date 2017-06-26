@@ -1,19 +1,40 @@
 <div class="container">
   <h1>Sign up</h1>
-  <form>
-    <div class="form-group">
+  <form #f="ngForm" novalidate (ngSubmit)="onRegister(f)">
+    <div class="form-group" [ngClass]="{'has-error': formSubmitted && name.invalid, 'has-success': formSubmitted && name.valid}">
       <label for="username">Name</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" [(ngModel)]="user.name" #name="ngModel" required name="name">
+      <ul class="text-danger list-unstyled" *ngIf="formSubmitted && name.invalid">
+        <li *ngIf="name.errors.required">
+          A name is required.
+        </li>
+      </ul>
     </div>
-    <div class="form-group">
-      <label for="username">Email</label>
-      <input type="text" class="form-control">
+    <div class="form-group" [ngClass]="{'has-error': formSubmitted && email.invalid, 'has-success': formSubmitted && email.valid}">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" [(ngModel)]="user.email" #email="ngModel" required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' name="email">
+      <ul class="text-danger list-unstyled" *ngIf="formSubmitted && email.invalid">
+        <li *ngIf="email.errors.required">
+          An email is required.
+        </li>
+        <li *ngIf="email.errors.pattern">
+          A valid email is required.
+        </li>
+      </ul>
     </div>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formSubmitted && password.invalid, 'has-success': formSubmitted && password.valid}">
       <label for="password">Password</label>
-      <input type="password" class="form-control">
+      <input type="password" class="form-control" [(ngModel)]="user.password" #password="ngModel" minlength="3" required name="password">
+      <ul class="text-danger list-unstyled" *ngIf="formSubmitted && password.invalid">
+        <li *ngIf="password.errors.required">
+          A password is required.
+        </li>
+        <li *ngIf="password.errors.minlength">
+          The password must have at least 3 characters.
+        </li>
+      </ul>
     </div>
     <button type="submit" class="btn register"><h4>Sign up</h4></button>
-    <button type="submit" class="btn login"><h4>Login</h4></button>
+    <a class="btn login" [routerLink]="['/login']"><h4>Login</h4></a>
   </form>
 </div>

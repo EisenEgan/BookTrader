@@ -2,6 +2,7 @@ require('./api/data/db.js');
 var express = require('express');
 var app = express();
 var path = require('path');
+var cors = require('cors');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 const passport = require('passport');
@@ -14,6 +15,9 @@ app.set('port', 3000);
 
 // Add middleware to console log every request
 app.use(morgan('dev'));
+
+// CORS Middleware
+app.use(cors());
 
 // Set static directory before defining routes
 app.use(express.static(path.join(__dirname, 'public')))

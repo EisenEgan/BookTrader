@@ -45,3 +45,5 @@ process.on('SIGTERM', function() {
 // BRING IN YOUR SCHEMAS & MODELS
 // change
 require('./books.model')
+require('./tradeBooks.model')
+require('./user.js')
