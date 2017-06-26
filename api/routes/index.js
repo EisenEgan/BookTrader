@@ -20,7 +20,7 @@ router.route('/books/cancel')
 router.route('/books/reject')
   .post(ctrlBooks.rejectRequest)
 
-router.route('/books/approve')
-  .post(ctrlBooks.approveRequest)
+router.route('/books/accept')
+  .post(ctrlBooks.acceptRequest)
 
 module.exports = router

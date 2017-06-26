@@ -110,21 +110,45 @@ module.exports.removeBook = function(req, res) {
 }
 //bookId, userId
 module.exports.requestBook = function(req, res) {
-  TradeBook.findByIdAndUpdate(req.body.bookId, {$set: {userRequestingTrade : req.body.userId}}, (err) => {
+  console.log("body", req.body)
+  TradeBook.findById(req.body.bookId, (err, tradeBook) => {
     if (err) {
-      res.status(500).json(err);
-    } else {
-      TradeBook
-        .find()
-        .exec(function(err, books) {
-          if (err) {
-            res.status(500).json(err);
-          } else {
-            res.json(books);
-          }
-        });
+      res.status(500).json(err)
     }
+    console.log(tradeBook)
+    tradeBook.userRequestingTrade = ObjectID(req.body.userId)
+    console.log(tradeBook)
+    tradeBook.save((err) => {
+      if (err) {
+        res.status(500).json(err)
+      } else {
+        TradeBook
+              .find()
+              .exec(function(err, books) {
+                if (err) {
+                  res.status(500).json(err);
+                } else {
+                  res.json(books);
+                }
+              })
+      }
+    })
   })
+  // TradeBook.findByIdAndUpdate(req.body.bookId, {$set: {userRequestingTrade : ObjectID(req.body.userId)}}, (err) => {
+  //   if (err) {
+  //     res.status(500).json(err);
+  //   } else {
+  //     TradeBook
+  //       .find()
+  //       .exec(function(err, books) {
+  //         if (err) {
+  //           res.status(500).json(err);
+  //         } else {
+  //           res.json(books);
+  //         }
+  //       });
+  //   }
+  // })
 }
 
 module.exports.cancelRequest = function(req, res) {
@@ -147,7 +171,7 @@ module.exports.rejectRequest = function(req, res) {
   })
 }
 
-module.exports.approveRequest = function(req, res) {
+module.exports.acceptRequest = function(req, res) {
   TradeBook.findByIdAndUpdate(req.body.bookId, { $set: { traded: true }}, (err) => {
     if (err) {
       res.status(500).json(err)

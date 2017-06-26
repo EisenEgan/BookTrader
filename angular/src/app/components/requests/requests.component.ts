@@ -22,13 +22,11 @@ export class RequestsComponent implements OnInit {
   ngOnInit() {
     var user = JSON.parse(localStorage.getItem('user'))
     this.id = user._id
-    // this.booksOutstanding.push({ title: 'Some Book' })
-    // this.booksUnapproved.push({ title: 'Some Other Book' })
     this.bookService.getAllBooks().subscribe(data => {
       data.forEach(book => {
-        if (book.userRequestingTrade && book.userRequestingTrade == this.id && !user.traded) {
+        if (book.userRequestingTrade && book.userRequestingTrade == this.id && !book.traded) {
           this.booksOutstanding.push(book)
-        } else if (book.user == this.id && book.userRequestingTrade && !user.traded) {
+        } else if (book.user == this.id && book.userRequestingTrade && !book.traded) {
           this.booksUnapproved.push(book)
           // } else if (book.userRequestingTrade && book.userRequestingTrade == this.id && user.traded) {
           //   this.booksRecieved.push(book)
@@ -57,27 +55,27 @@ export class RequestsComponent implements OnInit {
     this.bookService.cancelRequest(book._id, this.id).subscribe(data => {
       if (data.success) {
         var index = this.booksOutstanding.indexOf(book)
-        this.booksOutstanding = this.booksOutstanding.splice(index, 1)
+        this.booksOutstanding.splice(index, 1)
         this.outstandingBooks = this.booksOutstanding.length
       }
     })
   }
 
   approveTrade(book) {
-    this.bookService.cancelRequest(book._id, this.id).subscribe(data => {
+    this.bookService.acceptRequest(book._id, this.id).subscribe(data => {
       if (data.success) {
         var index = this.booksUnapproved.indexOf(book)
-        this.booksUnapproved = this.booksUnapproved.splice(index, 1)
+        this.booksUnapproved.splice(index, 1)
         this.unapprovedBooks = this.booksUnapproved.length
       }
     })
   }
 
   rejectTrade(book) {
-    this.bookService.cancelRequest(book._id, this.id).subscribe(data => {
+    this.bookService.rejectRequest(book._id, this.id).subscribe(data => {
       if (data.success) {
         var index = this.booksUnapproved.indexOf(book)
-        this.booksUnapproved = this.booksUnapproved.splice(index, 1)
+        this.booksUnapproved.splice(index, 1)
         this.unapprovedBooks = this.booksUnapproved.length
       }
     })

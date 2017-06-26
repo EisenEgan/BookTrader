@@ -16,7 +16,7 @@
     </div> -->
     <div style="position: relative;" class="image-container">
       <img [src]="book.imageUrl"  class="book-image" style="position: relative; z-index: 1;" />
-      <span (click)="requestBook()" *ngIf="book.user!==id && !book.userRequestingTrade"class="glyphicon glyphicon-retweet" style="position: absolute;cursor:pointer;left:100px; top: 10px;z-index: 10;"></span>
+      <span (click)="requestBook(book._id)" *ngIf="book.user!==id && !book.userRequestingTrade"class="glyphicon glyphicon-retweet" style="position: absolute;cursor:pointer;left:100px; top: 10px;z-index: 10;"></span>
      </div>
     <!-- <div class="image-container">
       <img [src]="book.imageUrl" class="bookimage" />

@@ -25,13 +25,13 @@ export class BooksComponent implements OnInit {
   requestBook(bookId) {
     this.bookService.requestBook(bookId, this.id).subscribe(data => {
       this.books = data
-      // if (data.success) {
-      //   this.bookService.getAllBooks().subscribe(data => {
-      //     this.books = data
-      //   }, err => {
-      //     console.log(err)
-      //   })
-      // }
+      if (data.success) {
+        this.bookService.getAllBooks().subscribe(data => {
+          this.books = data
+        }, err => {
+          console.log(err)
+        })
+      }
     })
   }
 

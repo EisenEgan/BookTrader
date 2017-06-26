@@ -8,7 +8,7 @@
       <div class="title">
         {{ book.title }}
       </div>
-      <span class="glyphicon glyphicon-remove" (click)="cancelRequest()"></span>
+      <span class="glyphicon glyphicon-remove" (click)="cancelRequest(book)"></span>
     </div>
   </div>
   <div *ngIf="showUnapproved">
@@ -18,8 +18,8 @@
       <div class="title">
         {{ book.title }}
       </div>
-      <span class="glyphicon glyphicon-ok" (click)="approveTrade()"></span>
-      <span class="glyphicon glyphicon-remove" (click)="rejectTrade()"></span>
+      <span class="glyphicon glyphicon-remove" (click)="rejectTrade(book)"></span>
+      <span class="glyphicon glyphicon-ok" (click)="approveTrade(book)"></span>
     </div>
   </div>
 </div>
